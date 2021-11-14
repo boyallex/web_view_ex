@@ -39,9 +39,42 @@ class WebViewPage extends StatelessWidget {
         javascriptMode: JavascriptMode.unrestricted,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: () {},
         child: Text("Help"),
       ),
+    );
+  }
+}
+
+class SupportPage extends StatelessWidget {
+  const SupportPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("WebViewTest"),
+        // backgroundColor: Colors.amberAccent,
+        leading: Icon(
+          Icons.menu,
+        ),
+      ),
+      body: ListView(
+        children: [
+
+        ],
+      ),
+    );
+  }
+}
+
+class SupportCard extends StatelessWidget {
+  const SupportCard({ Key? key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
     );
   }
 }
