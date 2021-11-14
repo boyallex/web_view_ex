@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 // import 'package:webview_flutter/webview_flutter.dart';
@@ -29,6 +28,10 @@ class WebViewPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("WebViewTest"),
+        // backgroundColor: Colors.amberAccent,
+        leading: Icon(
+          Icons.menu,
+        ),
       ),
       body: WebView(
         initialUrl: 'https://mobyte.dev',
