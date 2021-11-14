@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -16,8 +18,18 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class WebViewPage extends StatelessWidget {
+class WebViewPage extends StatefulWidget {
   const WebViewPage({Key? key}) : super(key: key);
+
+  @override
+  State<WebViewPage> createState() => _WebViewPageState();
+}
+
+class _WebViewPageState extends State<WebViewPage> {
+  void initState() {
+    super.initState();
+    if (Platform.isAndroid) WebView.platform = SurfaceAndroidWebView();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,48 +79,53 @@ class SupportPage extends StatelessWidget {
           right: 10,
           top: 10,
         ),
-        child: Column(
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SupportCard(
-                  position: "Overall guidance",
-                  inf: "tel. +7 903 363 72 15 galina.isaykina@volga-dnepr.com",
-                  name: "Galina",
-                  photo: "assets/fist_connect.jpeg",
-                ),
-                SupportCard(
-                  position: "Summit program, accomondation",
-                  inf: "tel. +7 903 363 72 15 galina.isaykina@volga-dnepr.com",
-                  name: "Olga",
-                  photo: "assets/second_connect.jpeg",
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SupportCard(
-                  position: "Summit program, accomondation",
-                  inf: "tel. +7 903 363 72 15 galina.isaykina@volga-dnepr.com",
-                  name: "Anastasia",
-                  photo: "assets/third_connect.png",
-                ),
-                SupportCard(
-                  position: "",
-                  inf: "global-vd@volga-dnepr.com",
-                  name: "It Support",
-                  photo: "assets/connect.png",
-                ),
-              ],
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SupportCard(
+                    position: "Overall guidance",
+                    inf:
+                        "tel. +7 903 363 72 15 galina.isaykina@volga-dnepr.com",
+                    name: "Galina",
+                    photo: "assets/fist_connect.jpeg",
+                  ),
+                  SupportCard(
+                    position: "Summit program, accomondation",
+                    inf:
+                        "tel. +7 903 363 72 15 galina.isaykina@volga-dnepr.com",
+                    name: "Olga",
+                    photo: "assets/second_connect.jpeg",
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SupportCard(
+                    position: "Summit program, accomondation",
+                    inf:
+                        "tel. +7 903 363 72 15 galina.isaykina@volga-dnepr.com",
+                    name: "Anastasia",
+                    photo: "assets/third_connect.png",
+                  ),
+                  SupportCard(
+                    position: "",
+                    inf: "global-vd@volga-dnepr.com",
+                    name: "It Support",
+                    photo: "assets/connect.png",
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
