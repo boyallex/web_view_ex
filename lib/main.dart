@@ -34,8 +34,13 @@ class WebViewPage extends StatelessWidget {
         ),
       ),
       body: WebView(
-        initialUrl: 'https://mobyte.dev',
+        initialUrl:
+            'https://lk.expoday.online/auth?vst=90264762A6660AFD3B5BE9ECAA59D45B',
         javascriptMode: JavascriptMode.unrestricted,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: Text("Help"),
       ),
     );
   }
