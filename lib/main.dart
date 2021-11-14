@@ -70,6 +70,7 @@ class SupportPage extends StatelessWidget {
         child: Column(
           children: [
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SupportCard(
@@ -90,6 +91,7 @@ class SupportPage extends StatelessWidget {
               height: 15,
             ),
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SupportCard(
@@ -134,11 +136,11 @@ class SupportCard extends StatelessWidget {
         ),
       ),
       width: 165,
-      height: 190,
       child: Column(
         children: [
           Container(
             child: Image(
+              height: 150,
               image: AssetImage(
                 photo,
               ),
