@@ -35,48 +35,9 @@ class _WebViewPageState extends State<WebViewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(0, 73, 126, 0),
+        backgroundColor: Color(0xff00497e),
         centerTitle: true,
-                bottom: PreferredSize(
-          preferredSize: Size(0.0, 20.0),
-          child: RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-                text: "Global",
-                style: TextStyle(fontSize: 14, color: Colors.white),
-                children: <TextSpan>[
-                  TextSpan(
-                    text: '\nCustomer',
-                  ),
-                  TextSpan(
-                    text: '\nSummit',
-                  ),
-                ]),
-          ),
-        ),
-        // title: Column(
-        //   mainAxisAlignment: MainAxisAlignment.center,
-        //   children: [
-        //     Text(
-        //       "GLOBAL ",
-        //       style: TextStyle(fontSize: 13),
-        //     ),
-        //     SizedBox(
-        //       height: 2,
-        //     ),
-        //     Text(
-        //       "CUSTOMER",
-        //       style: TextStyle(fontSize: 13),
-        //     ),
-        //     SizedBox(
-        //       height: 2,
-        //     ),
-        //     Text(
-        //       "SUMMIT2021",
-        //       style: TextStyle(fontSize: 13),
-        //     )
-        //   ],
-        // ),
+        title: Text("GLOBAL CUSTOMER SUMMIT2021", style: TextStyle(fontSize: 14)) 
       ),
       body: WebView(
         initialUrl:
@@ -84,6 +45,7 @@ class _WebViewPageState extends State<WebViewPage> {
         javascriptMode: JavascriptMode.unrestricted,
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xff00497e),
         onPressed: () {
           Navigator.push(
             context,
@@ -107,31 +69,13 @@ class SupportPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff00497e),
         centerTitle: true,
-        title: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "GLOBAL",
-              style: TextStyle(fontSize: 13),
-            ),
-            SizedBox(
-              height: 2,
-            ),
-            Text(
-              "CUSTOMER",
-              style: TextStyle(fontSize: 13),
-            ),
-            SizedBox(
-              height: 2,
-            ),
-            Text(
-              "SUMMIT2021",
-              style: TextStyle(fontSize: 13),
-            )
-          ],
-        ),
+        title: Text("GLOBAL CUSTOMER SUMMIT2021", style: TextStyle(fontSize: 14)) ,
         leading: ElevatedButton(
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Color(0xff00497e),),
+            ),
             onPressed: () {
               Navigator.pop(context);
             },
