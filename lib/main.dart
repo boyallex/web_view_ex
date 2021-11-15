@@ -1,5 +1,5 @@
 import 'dart:io';
-
+// import '';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -35,10 +35,52 @@ class _WebViewPageState extends State<WebViewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("VolgaDnepr"),
+        backgroundColor: Color.fromRGBO(0, 73, 126, 0),
+        centerTitle: true,
+                bottom: PreferredSize(
+          preferredSize: Size(0.0, 20.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                text: "Global",
+                style: TextStyle(fontSize: 14, color: Colors.white),
+                children: <TextSpan>[
+                  TextSpan(
+                    text: '\nCustomer',
+                  ),
+                  TextSpan(
+                    text: '\nSummit',
+                  ),
+                ]),
+          ),
+        ),
+        // title: Column(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        //   children: [
+        //     Text(
+        //       "GLOBAL ",
+        //       style: TextStyle(fontSize: 13),
+        //     ),
+        //     SizedBox(
+        //       height: 2,
+        //     ),
+        //     Text(
+        //       "CUSTOMER",
+        //       style: TextStyle(fontSize: 13),
+        //     ),
+        //     SizedBox(
+        //       height: 2,
+        //     ),
+        //     Text(
+        //       "SUMMIT2021",
+        //       style: TextStyle(fontSize: 13),
+        //     )
+        //   ],
+        // ),
       ),
       body: WebView(
-        initialUrl: 'https://lk.expoday.online/',
+        initialUrl:
+            'https://lk.expoday.online/auth?vst=90264762A6660AFD3B5BE9ECAA59D45B',
         javascriptMode: JavascriptMode.unrestricted,
       ),
       floatingActionButton: FloatingActionButton(
@@ -65,7 +107,30 @@ class SupportPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("VolgaDnepr"),
+        centerTitle: true,
+        title: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "GLOBAL",
+              style: TextStyle(fontSize: 13),
+            ),
+            SizedBox(
+              height: 2,
+            ),
+            Text(
+              "CUSTOMER",
+              style: TextStyle(fontSize: 13),
+            ),
+            SizedBox(
+              height: 2,
+            ),
+            Text(
+              "SUMMIT2021",
+              style: TextStyle(fontSize: 13),
+            )
+          ],
+        ),
         leading: ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
